@@ -426,7 +426,7 @@ Transform:
   m_GameObject: {fileID: 734028689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.52, y: -3.79, z: 0}
+  m_LocalPosition: {x: 0.04, y: -3.67, z: 0}
   m_LocalScale: {x: 0.14373276, y: 0.14373276, z: 0.14373276}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -444,6 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fba4fd1b976744280b41f3988663fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  playerControl: {fileID: -944628639613478452, guid: b13d807877cd49245b49987cb9111bc3, type: 3}
+  bullet: {fileID: 4962275183428921664, guid: 1c4f275595105954385c535f6401402d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

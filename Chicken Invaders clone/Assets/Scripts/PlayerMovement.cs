@@ -5,12 +5,36 @@ public class PlayerMovement : MonoBehaviour
 {
     private float screenHorizontalLimit = 10.5f;
     private float screenVerticalLimit = 4.0f;
+    [SerializeField] private InputActionAsset playerControl = null;
+    private InputAction fire;
+    [SerializeField] private GameObject bullet = null;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
-
+    void Awake()
+    {
+        fire = playerControl.FindAction("Player/fire");
+    }
+    void Fire()
+    {
+        Instantiate(bullet, transform.position, transform.rotation);
+    }
+    void OnEnable()
+    {
+        fire.Enable();
+        fire.performed += OnFireTriggered;
+    }
+    void OnDisable()
+    {
+        fire.Disable();
+        fire.performed -= OnFireTriggered;
+    }
+    void OnFireTriggered(InputAction.CallbackContext context)
+    {
+        Fire();
+    }
     // Update is called once per frame
     void Update()
     {
