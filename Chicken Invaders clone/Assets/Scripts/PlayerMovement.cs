@@ -17,6 +17,16 @@ public class PlayerMovement : MonoBehaviour
     {
         fire = playerControl.FindAction("Player/fire");
     }
+    void Move()
+    {
+        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+        
+        mouseWorldPosition.y = Mathf.Clamp(mouseWorldPosition.y, -screenVerticalLimit, screenVerticalLimit);
+        mouseWorldPosition.x = Mathf.Clamp(mouseWorldPosition.x, -screenHorizontalLimit, screenHorizontalLimit);
+        mouseWorldPosition.z = transform.position.z;
+        transform.position = mouseWorldPosition;
+    }
     void Fire()
     {
         Instantiate(bullet, transform.position, transform.rotation);
@@ -38,13 +48,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
-        
-        mouseWorldPosition.y = Mathf.Clamp(mouseWorldPosition.y, -screenVerticalLimit, screenVerticalLimit);
-        mouseWorldPosition.x = Mathf.Clamp(mouseWorldPosition.x, -screenHorizontalLimit, screenHorizontalLimit);
-        mouseWorldPosition.z = transform.position.z;
-        transform.position = mouseWorldPosition;
-        
+        Move();
     }
 }
