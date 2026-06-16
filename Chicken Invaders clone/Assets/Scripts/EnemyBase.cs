@@ -13,12 +13,19 @@ public class EnemyBase : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Debug.Log(ScreenBoundaries.GetTopRight().x);
     }
 
     // Update is called once per frame
     void Update()
     {
+        Vector2 currentPosition = transform.position;
+        if (currentPosition.x >= ScreenBoundaries.GetTopRight().x)
+        {
+            currentPosition.x = ScreenBoundaries.GetBottomLeft().x;
+        }
         
+        currentPosition.x += moveSpeed * Time.deltaTime;
+        transform.position = currentPosition;
     }
 }
