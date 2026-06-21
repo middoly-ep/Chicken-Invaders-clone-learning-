@@ -41,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         fire.Disable();
         fire.performed -= OnFireTriggered;
     }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
+        Debug.Log("Game over");
+    }
     void OnFireTriggered(InputAction.CallbackContext context)
     {
         Fire();
