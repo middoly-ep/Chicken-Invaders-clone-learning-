@@ -2,10 +2,8 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
 {
-    [SerializeField] protected float hp = 0;
-    [SerializeField] protected float moveSpeed = 5.0f;
-
-    public void TakeDamage(float bullet_damage)
+    [SerializeField] private EnemyNhiSO enemyNhiSO;
+    [SerializeField] private LevelManager levelManager;
     {
         this.hp -= bullet_damage;
         if (this.hp <= 0) Destroy(gameObject);

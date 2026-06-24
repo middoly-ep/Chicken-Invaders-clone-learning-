@@ -3,7 +3,7 @@ using UnityEngine;
 public class BulletBase : MonoBehaviour
 {
     [SerializeField] private float speed = 5.0f;
-    [SerializeField] private float damage = 2.0f;
+    [SerializeField] private int damage = 2;
     private Rigidbody2D rb;
     private float screenVerticalLimit = 4.0f;
     void OnTriggerEnter2D(Collider2D collision)

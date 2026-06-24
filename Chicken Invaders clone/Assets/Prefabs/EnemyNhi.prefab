@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7736923671092778145, guid: e834ffb5c95609f46ac1ba4a5e1d400a, type: 3}
+  m_Sprite: {fileID: -7736923671092778145, guid: 6d90eb0e26b6d3143875ed57c038b680, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,5 +169,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d4ba3422534d648aacd13034466ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBase
-  hp: 0
-  moveSpeed: 5
+  enemyNhiSO: {fileID: 11400000, guid: d105be39dccaa8745989ee8c608b229a, type: 2}

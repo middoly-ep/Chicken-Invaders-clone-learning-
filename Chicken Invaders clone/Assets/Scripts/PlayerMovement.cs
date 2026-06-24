@@ -3,15 +3,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float screenHorizontalLimit = 10.5f;
-    private float screenVerticalLimit = 4.0f;
+    private float screenHorizontalLimit;
+    private float screenVerticalLimit;
     [SerializeField] private InputActionAsset playerControl = null;
     private InputAction fire;
     [SerializeField] private GameObject bullet = null;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        screenHorizontalLimit = ScreenBoundaries.GetTopRight().x;
+        screenVerticalLimit = ScreenBoundaries.GetTopRight().y;
     }
     void Awake()
     {
